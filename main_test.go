@@ -56,4 +56,5 @@ func TestXmlToYaml(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
+	assert.Equal(t, "application/x-yaml", w.Header().Get("content-type"))
 }
